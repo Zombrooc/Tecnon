@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block head %}
+		<title> {{ cursos.nome_curso }} | Tecnon </title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_detalhes.css'%}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_detalhes_mobile.css' %}" media="screen and (max-width: 1000px)">
+{% endblock %}
+
+
+{% block corpo %}
+		<div class="corpo">
+			{% for mod in range %}
+				<button class="accordion">Módulo {{ mod }}</button>
+				<div class="panel">
+					{% for post in postagens %}
+						{% if post.modulo == mod %}
+							<h3><a href="{{ post.get_absolute_url }}">{{ post.disciplina }} - {{ post.titulo }}</a></h3>
+						{% endif %}
+					{% empty%}
+						<h2 style="text-align:center; "> Nenhum conteúdo publicado, volte mais tarde... </h2>
+					{% endfor %}
+				</div>
+			{% endfor %}
+		</div>
+
+		<script src="{% static 'js/accordion.js' %}"></script>
+
+{% endblock %}

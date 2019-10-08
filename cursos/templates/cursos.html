@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block head%}
+		<meta name="description" content="Broken Link, O Site mais inutil do Mundo">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_cursos.css'%}">
+		<title>Tecnon | Cursos Técnicos</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_cursos_mobile.css' %}" media="screen and (max-width: 1000px)">
+{% endblock%}
+{% block corpo %}
+    <div class="corpo">
+        {% for curso in cursos %}
+            <a href="{{ curso.get_absolute_url }}">
+                <div class="curso">
+                    <p style="font-size: 30px; text-align: center;"> {{ curso.nome_curso }}</p>
+                    <p style="font-size: 17px;"> <span style="font-weight: bold;">Duração do Curso:</span> {{ curso.duracao }}</p><br>
+                    <p style="font-size: 17px;"> <span style="font-weight: bold;">Turnos:</span> {{ curso.turnos }}</p><br>
+                    <p style="font-size: 17px;"> <span style="font-weight: bold;">Descrição:</span> {{ curso.descricao|linebreaks }}</p>
+                </div>
+                
+            </a>
+        {% empty %}
+            <h2 style="text-align: center;"> Nenhum curso cadastrado, volte mais tarde. </h2>
+        {% endfor %}
+    </div>
+{% endblock %}
+</body>
+</html>-->

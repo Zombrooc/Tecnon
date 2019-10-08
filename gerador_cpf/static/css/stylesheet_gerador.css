@@ -1,0 +1,44 @@
+.corpo{
+	background-color: #fff;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 5px;
+	font-family: MS Sans Serif;
+}
+
+h1{
+	font-size: 3rem;
+}
+
+.texto{
+	text-align: center;
+	margin: 10px auto;
+}
+
+.cpf{
+	color: #000;
+	width: 280px;
+	text-align: center;
+	margin: 10px auto;
+	border:1px solid #19b563;
+	border-radius: 5px;
+	font-size: 35px;
+}
+
+form{
+	text-align:center;
+}
+
+.gerar{
+	width: 250px;
+	border: 1px solid #19b563;
+	background: transparent;
+	color: #19b563;
+	font-size: 1.5rem;
+	border-radius: 6px 23px;
+}
+
+.gerar:hover{
+	background: #19b563;
+	color: #fff;
+}

@@ -1,0 +1,58 @@
+.corpo{
+	background: #fff;
+	margin: 10px;
+	color: #000;
+	font-family: Raleway;
+}
+/*
+
+p.titulo{
+	font-size: 30px;
+}*/
+
+.accordion {
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+
+.accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+
+.active:after {
+    content: "\2796";
+}
+
+
+.active, .accordion:hover {
+    background-color: #eee; 
+}
+
+
+.panel {
+    padding: 0 18px;
+    background-color: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+
+.panel a{
+	text-decoration: none;
+	color: #000;
+}

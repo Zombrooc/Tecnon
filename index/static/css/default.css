@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Raleway', sans-serif;
+
+}
+
+
+a{
+	text-decoration: none;
+	color: #000;
+}
+
+
+body{
+	background: url("https://www.devmedia.com.br/view/img/grid.png"), rgba(0, 126, 174, .85);
+}
+
+
+@media screen and (max-width: 768px){
+	.menuLogo{
+		display: none;
+	}
+
+
+	.username{
+		border-radius: 4px;
+		background: rgba(0, 158, 65, .5);
+	}
+
+
+	.bar{
+		float: left;
+		color: #fff;
+		margin: 5px;
+		display: block;
+	}
+
+
+	.close{
+		text-align: right;
+		color: #fff;
+		margin-bottom: 8px;
+		display: block;	
+	}
+
+
+	.topBar{
+		background: #343a40;
+		width: 100vw;
+		text-align: center;
+		padding: 15px;
+		position: sticky;
+		top: 0;
+	}
+
+
+	.topBar .tituloBar{
+		font-size: 35px;
+		color: #fff;
+	}
+
+
+	.menu{
+		position: absolute;
+		top: 0;
+		width: 0;
+		height: 100vh;
+		text-align: center;
+		background: rgba(52, 58, 64, .8);
+		transition: width .5s;
+		overflow-x: hidden;
+	}
+
+
+	.menu-content{
+		padding: 15px;
+		position: relative;
+		width: 100vw;
+	}
+
+
+	.menu-item a{
+		display: block;
+		padding: 15px 20px;
+		font-size: 25px;
+		color: #fff;
+	}
+
+
+	.division{
+		border: none;
+		border-top: 1px solid #fff;
+	}
+
+
+	.loginButton{
+		border: 1px solid #009e41;
+		border-radius: 10px 60px;
+	}
+
+
+	.loginButton a{
+		color: #009e41;
+	}
+
+
+	.tituloMenu{
+		font-size: 30px;
+		text-align: center;
+		margin-top: 10px;
+		color: #fff;
+	}
+
+
+	.dropbtn{
+		display: none;
+	}
+
+
+	.rodape{
+		background: #fff;
+		border-radius: 4px;
+		padding: 15px;
+		margin: 10px;
+		text-align: center;
+	}
+
+
+	.rodape img{
+		width: 100px;
+	}
+
+
+	.logo{
+		display: none;
+	}
+
+
+	.username{
+		border-radius: 4px;
+	}
+}
+
+
+@media screen and (min-width: 769px){
+	.bar,
+	.close,
+	.menu .division{
+		display: none;
+	}
+
+
+	.dropdown-content .username{
+		display: none;
+	}
+
+
+	.dropdown-content a:hover{
+		border: 0px solid black;
+		background: #dbdbdb;
+	}
+
+
+	.topBar{
+		background: #343a40;
+		width: 100vw;
+		padding: 10px;
+		overflow: auto;
+		display:flex;
+		align-items:center;
+		font-size:50px;
+	}
+
+
+	.menuLogo{
+		float: left;
+		width: 105px;
+		margin-left: 15px;
+	}
+
+
+	.tituloBar{
+		color: #fff;
+	}
+
+
+	.menu{
+		background: #343a40;
+		width: 100vw;
+		padding: 20px;
+		position: relative;
+	}
+
+
+	.container-menu{
+		position: sticky;
+		top: 0;
+	}
+
+
+	.menu-item{
+		display: inline-block;
+		margin: 5px; 
+	}
+
+
+	.menu-item a{
+		font-size: 25px;
+		color:  #fff;
+		padding: 5px 15px;
+		border-bottom: 1px solid #4286f4;
+		transition: border-bottom 0.4s, color 0.3s;
+	}
+
+
+	.menu-item a:hover{
+		border-bottom: 15px solid #4286f4;
+	}
+
+	
+	.buttonGroup > .menu-item a{
+		border-bottom: none;
+	}
+
+
+	.buttonGroup > .menu-item{
+		text-align: center;
+	}
+
+
+	.buttonGroup{
+		position: absolute;
+		right: 15px;
+		bottom: 10px;
+	}
+
+
+	.loginButton{
+		border: 1px solid #009e41;
+		padding: 5px;
+		border-radius: 4px;
+	}
+
+
+	.loginButton a{
+		color: #009e41;
+	}
+
+
+	.loginButton:hover{
+		background: #009e41;
+	}
+
+
+	.loginButton a:hover{
+		color: #fff;
+	}
+
+
+	.dropbtn {
+	    background: transparent;
+	    color: #fff;
+	    padding: 16px;
+	    font-size: 20px;
+	    border: 1px solid #fff;
+	    cursor: pointer;
+	    border-radius: 4px;
+	    height: 50px;
+	    margin-bottom: 5px;
+	}
+
+
+	.nome_usuario {
+	    position: relative;
+	    display: inline-block;
+	    margin-top: 1.9vh;
+	}
+
+
+	.dropdown-content {
+		height: 0;
+		transition: height .5s;
+		overflow: hidden;
+		font-family: 'Raleway', sans-serif;
+		border-radius: 4px;
+	    position: absolute;
+	    background-color: #f9f9f9;
+	    width: 100%;
+	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	    z-index: 8;
+	    font-size: 15px;
+	}
+
+
+	.dropdown-content a {
+	    color: black;
+	    font-size: 20px;
+	    padding: 12px 16px;
+	    text-decoration: none;
+	    display: block;
+	    border: 0px solid transparent
+	}
+
+
+	.dropdown-content a:hover {
+		background-color: #f1f1f1;
+	}
+
+
+	.nome_usuario:hover .dropdown-content {
+	    height: auto;
+	}
+
+
+	/*Inicio Rodapé*/
+	.rodape{
+		background: #fff;
+		margin: 10px;
+		border-radius: 5px;
+		text-align: center;
+		font-size: 1.2rem;
+		font-family: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,sans-serif;
+		vertical-align: middle;
+		padding: 20px;
+	}
+
+	.logo{
+		position: relative;
+		z-index: 1;
+		height: 85px;
+	}
+
+	.broken_link{
+		font-family: Century Gothic;
+	}
+
+	.broken_link a{
+		text-decoration: none;
+		display:flex;
+		align-items:center;
+		font-size:40px;
+		color: #bcbcbc;
+	}
+
+	.broken_link a:hover{
+		color: #1976d2;
+	}
+
+	.wih{
+		font-family: Century Gothic;
+	}
+
+	.wih a{
+		text-align: right;
+		display:flex;
+		align-items:center;
+		font-size:40px;
+		text-decoration: none;
+		color: #bcbcbc;
+	}
+
+	.wih a:hover{
+		color: #1976d2;
+	}
+
+
+	.lamp{
+		display: none;
+	}
+	/*Fim Rodapé*/
+
+}

@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block head%}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_att.css'%}">
+		<title>Tecnon :: Atualizações </title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_att_mobile.css' %}" media="screen and (max-width: 1000px)">
+{% endblock%}
+{% block corpo %}
+	<div class="corpo">
+		<h1>{{ atualizacao.titulo }}</h1>
+		<h1> Versão: {{atualizacao.versao }}</h1>
+		<p> {{ atualizacao.conteudo|safe|linebreaksbr}}</p>
+
+
+	</div>
+	
+
+{% endblock %}

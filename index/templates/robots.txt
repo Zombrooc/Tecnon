@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /googlefb3c6a4443b4ed52.html/
+Disallow: /base/
+Allow: /
+Disallow: eugostodebatata/

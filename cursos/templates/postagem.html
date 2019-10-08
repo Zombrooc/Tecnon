@@ -1,0 +1,60 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block head %}
+		<title> {{ curso.nome_curso }} | Tecnon </title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_show_post.css'%}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_show_post_mobile.css' %}" media="screen and (max-width: 1000px)">
+{% endblock %}
+
+
+{% block corpo %}
+	<button onclick="topFunction()" id="myBtn" title="Go to top">
+		<i class="fas fa-arrow-up"></i>
+	</button>
+	<div class="conteudo">
+
+		<h2 style="text-align: center; font-family: Arial"> {{ postagem.titulo }}</h2>
+		<h4 style="font-family: Arial"> Publicado em: {{ postagem.created_at|date:"d/M/Y" }}</h4>
+		<h4 style="font-family: Arial;">
+			Disciplina: {{ postagem.disciplina }}                          Professor(a): {{ postagem.prof}}
+		</h4>
+		<hr>
+		{% for paragrafo in paragrafos %}
+			{{ paragrafo.titulo|safe|escape  }}
+			{% if paragrafo.imagem %}
+				<img src="{{ paragrafo.imagem.url }}" width="50%">
+			{% endif %}
+			{{ paragrafo.conteudo|safe|linebreaksbr }}
+		{% endfor %}
+
+	</div>
+	<div class="conteudo">
+		<h5>
+			<span style="font-size: 17px;">Comentários</span>
+			<a href="#comment_form" style="position: absolute; right: 30px; font-size: 17px;">Comentar</a>
+		</h5>
+		<hr>
+		{% for comentario in postagem.comments.all %}
+			<div class="comment">
+				<p>
+					<span style="font-weight: bold;"> {{ comentario.user }} </span> comentou à {{ comentario.created_at|timesince }}
+					<br>
+					<p style="word-wrap: break-word;">{{ comentario.comment|linebreaksbr }}</p>
+				</p>
+			</div>
+		{% empty %}
+			<p>Nenhum comentário. Seja o primeiro a comentar.</p>
+		{% endfor %}
+		<form method="POST" id="comment_form">
+			<div style="padding: 5px; box-sizing: border-box; width: 480px; position: relative;">
+				{% csrf_token %}
+				Comentar:<br/>
+				{{ form.comment }}
+				{{ form.errors }}
+				<button class="comment_button" type="submit"> Comentar </button>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="{% static 'js/scrollFunc.js' %}"></script>
+
+{% endblock %}

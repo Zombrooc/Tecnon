@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block head%}
+		<title> Login </title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_login.css'%}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_login_mobile.css' %}" media="screen and (max-width: 1000px)">
+{% endblock%}
+{% block corpo %}
+	<!-- Inicio Corpo -->
+	<div class="corpo">
+		<h1 style="font-weight: bold; font-size: 25px; text-align: center; margin-bottom: 16px;"> Efetuar Login</h1>
+		{% if usuario_incorreto == True %}
+			<div class="error_box">
+				<p> Usuário ou Senha Incorreto.<br>
+				Por favor, tente novamente...</p>
+			</div>
+		{% endif %}
+		<form method="POST">
+			{% csrf_token %}
+			<input type="hidden" name="next" value="{{ request.GET.next }}"/>
+			<label> Nome de Usuário: </label>
+			<input name="username" type="text">
+			<label> Senha: </label>
+			<input name="password1" type="password">
+			<button type="submit"> Login </button>
+		</form>
+	</div>
+	<!-- Fim Corpo -->
+	
+
+{% endblock %}

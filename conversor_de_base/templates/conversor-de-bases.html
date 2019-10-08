@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block head%}
+		<meta name="description" content="Broken Link, O Site mais inutil do Mundo">
+		<title>Conversor de Bases | Tecnon</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_conversor_de_base.css'%}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_conversor_de_base_mobile.css' %}" media="screen and (max-width: 1000px)">
+{% endblock%}
+{% block corpo %}
+	<!-- Inicio Corpo -->
+	<div class="corpo">
+		<h1>Conversor de Bases</h1>
+		<form method="POST">
+			{% csrf_token %}
+			<div class="form">
+				<label>Escolha as bases decimais: </label><br>
+				{{form.selecione_uma_opcão}} para 
+				{{form.selecione_a_segunda_opcão}}<br>
+				<label for="">Digite o número a ser convertido: </label>
+				{{form.Número_a_ser_convertido}}
+				<button class="calcular" type="submit">Calcular</button>
+			</div>
+		</form>
+		<p class="resultado">{{resultado}}</p>
+	</div>
+	<!-- Fim Corpo -->
+	
+
+{% endblock %}

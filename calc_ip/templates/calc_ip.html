@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block head%}
+		<meta name="description" content="Broken Link, O Site mais inutil do Mundo">
+		<title>Calculadora de IP | Tecnon</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_calc_ip.css'%}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_calc_ip_mobile.css' %}" media="screen and (max-width: 1000px)">
+{% endblock%}
+{% block corpo %}
+
+	<!-- Inicio Corpo -->
+	<div class="corpo">
+		<h1>Calculadora de IPs</h1>
+		<p style="font-size: 1.5rem;"> Calculadora de IPs tipo C</p><br>
+		<form method="POST">
+			<div class="form">
+				{% csrf_token %}
+				{{form}}
+				<button class="calcular"type="submit"> Calcular </button>
+			</div>
+		</form>
+		<div class="resultado">
+			<p>Mascara de Sub-Rede: 255.255.255.{{mascara_sub_rede}}</p>
+			<p>Numero de Sub-redes: {{numero_de_sub_redes}}</p>
+			<p>Número de IPs por rede: {{numero_de_ip_p_rede}}</p>
+			<p>Número de IPs Válidos: {{numero_ip_valido}}</p>
+		</div>
+	</div>
+	<!-- Fim Corpo -->
+	
+
+{% endblock %}

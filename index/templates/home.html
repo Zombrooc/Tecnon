@@ -1,0 +1,38 @@
+﻿{% extends 'base.html'%}
+{% load static%}
+{% block head%}
+		<meta name="description" content="Broken Link, O Site mais inutil do Mundo">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_home.css'%}">
+		<title>Tecnon</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_home_mobile.css' %}" media="screen and (max-width: 1000px)">
+{% endblock%}
+{% block corpo %}
+	<div class="corpo">
+		<h2 style="font-family: Arial"> Veja a últimas publicações feitas no site: </h2>
+		{% for post in postagens %}
+			<div class="post">
+				<a style="margin-top: 20px;" href="{{post.get_absolute_url}}">
+				{% if post.imagem %}
+					<img src="{{post.imagem.url}}" ></a>
+				{% else %}
+					<img src="{% static 'img/Not_Found.png'%}">
+				{% endif %}
+				<a href="{{post.get_absolute_url}}">  {{post.titulo}}<br/><span style="font-size: 18px; font-family: Arial">    Professor(a): {{post.prof}}                  Disciplina: {{post.disciplina}}</span></a>				
+			</div>
+			<br/>
+		{% endfor %}
+
+		<h2 style="font-family: Arial"> Últimas atualizações: </h2>
+		{% for att in atualizacoes %}
+			<div class="item_att">
+				<a href="{{ att.get_absolute_url }}">{{ att.titulo }}                                        Versão: {{att.versao }}                                       Data de Atualização: {{ att.created_at|date:"d/M/Y" }}</a>
+			</div>
+
+
+		{% endfor %}
+
+
+	</div>
+	
+
+{% endblock %}

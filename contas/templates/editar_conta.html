@@ -1,0 +1,82 @@
+{% extends 'painel-de-usuarios.html'%}
+{% load static%}
+
+
+{% block breadcrumb %}
+	{{ block.super}}
+	<li>/</li>
+	<li><a href="{% url 'editar_conta' %}"> Editar Conta </a></li>
+
+{% endblock %}
+
+
+{% block painel-content %}
+	<form method='POST'>
+		{% csrf_token %}
+		<table class="tg" style="undefined;table-layout: auto;">
+			<colgroup>
+				<col style="width: 123px">
+				<col style="width: 31px">
+				<col style="width: 296px">
+			</colgroup>
+			<tr>
+				<td class="tg-bzyv" colspan="3">
+					{% if success %}
+						<div class="message">
+							<i class="close icon" onclick="this.parentElement.style.display='none';"></i>
+							<div class="header">
+						    	Informações alteradas com sucesso!
+						  	</div>
+						</div>
+					{% endif %}
+				</td>
+			</tr>
+			<tr>
+		    	<td class="tg-pb8i" colspan="3" style="text-align: center;">
+		    		<div class="message init_message">
+						<i class="close icon" onclick="this.parentElement.style.display='none';"></i>
+						<div class="header">
+					    	Preencha os campos a serem alterado.
+					  	</div>
+					</div>
+		    	</td>
+		  	</tr>
+		  	<tr>
+		    	<th class="tg-bzyv" colspan="2">Username</th>
+		    	<th class="tg-i7ir">{{ form.username }}</th>
+		  	</tr>
+		  	<tr>
+		    	<td class="tg-bzyv" colspan="3">{{ form.errors.username }}</td>
+		  	</tr>
+		  	<tr>
+		    	<td class="tg-pb8i" colspan="2">Nome</td>
+		    	<td class="tg-i7ir">{{ form.first_name }}</td>
+		  	</tr>
+		  	<tr>
+		    	<td class="tg-pb8i" colspan="3"></td>
+		  	</tr>
+		  	<tr>
+		    	<td class="tg-pb8i" colspan="2">Sobrenome</td>
+		    	<td class="tg-i7ir">{{ form.last_name }}</td>
+		  	</tr>
+		  	<tr>
+		    	<td class="tg-pb8i" colspan="3"></td>
+		  	</tr>
+		  	<tr>
+		    	<td class="tg-pb8i" colspan="2">E-mail</td>
+		    	<td class="tg-i7ir">{{ form.email }}</td>
+		  	</tr>
+		  	<tr>
+		    	<td class="tg-pb8i" colspan="3">{{ form.errors.email }}</td>
+		  	</tr>
+		  	<tr>
+		    	<td class="tg-pb8i" colspan="3">
+		    		<button class="alteracao" type="submit">
+		    			Fazer Alterações
+		    		</button>
+		    	</td>
+		  	</tr>
+
+		</table>
+	</form>
+{% endblock %}

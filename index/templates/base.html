@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Elian Valdez">
+		<link rel="icon" href="{% static 'img/lampada_ico.ico'%}" />
+		<meta name="robots" content="index, follow">
+		<meta name="Googlebot" content="follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+		{% block head %}
+		{% endblock %}
+	</head>
+	<body>
+		<div class="topBar">
+			<i onclick="menuOpen()" class="fas fa-bars fa-2x bar"></i>
+			<img class="menuLogo" src="{% static 'img/lampada.png' %}">
+			<p class="tituloBar" >Tecn<span style="color: #009e41">ON</span></p>
+		</div>
+		<div class="container-menu">
+			<div class="menu" id="menu">
+				<div class="menu-content">
+					<div class="menu-item close">
+						<i onclick="menuClose()" class="fas fa-times fa-2x close"></i>
+					</div>
+					<div class="menu-item buttonGroup">
+						{% if user.is_authenticated %}
+						<div class="botoes_de_login">
+							<div class="nome_usuario">
+								<button class="dropbtn">{{user.get_username}} &#8595</button>
+								<div class="dropdown-content">
+									<a class="username" href="{% url 'painel_de_usuarios'%}">{{user.get_username}}</a>
+									<a href="{% url 'painel_de_usuarios'%}">Paínel de Usuários</a>
+							    	<a href="{% url 'logout'%}">Logout</a>
+							  	</div>
+							</div>
+						</div>
+						{% else %}
+						<div class="menu-item loginButton">
+							<a href="{% url 'login'%}"><i class="far fa-user"></i> | Login</a>
+						</div>
+						<div class="menu-item signupButton">
+							<a href="{% url 'cadastro' %}"><i class="fa fa-user-plus"></i> | Cadastrar-se</a>
+						</div>
+						{% endif %}
+					</div>
+					<hr class="division">
+					<div class="menu-item">
+						<a class="item" href="{% url 'home' %}">Início</a>
+					</div>
+					<div class="menu-item">
+						<a class="item" href="#"> Ferramentas </a>
+					</div>
+					<div class="menu-item">
+						<a class="item" href="{% url 'cursos'%}">Cursos Técnicos</a>
+					</div>
+					<div class="menu-item">
+						<a class="item" href="{% url 'sobre' %}">Sobre</a>
+					</div>
+					<hr class="division">
+				</div>
+			</div>
+		</div>
+		{% block corpo %}
+		{% endblock %}
+		<footer class="rodape">
+			<img class="lamp" src="{% static 'img/lampada.png' %}">
+			<div class="logo">
+				<div style="padding-top:0px; width:300px;">
+			  		<div class="broken_link" style="position: absolute; left: 2%; top: 5%">
+			  			<a href="#">
+			  				<img src="{% static 'img/logo.png' %}" width="80">
+			  				Broken Link
+			  			</a>
+			  		</div>
+				</div>
+					<img src="{% static 'img/aperto.png' %}" style="margin: 2vh auto;" width=85">
+				<div style="padding-top:0px;width:400px;">
+			  		<div class="wih" style="position: absolute; right: 2%; top: 5%">
+			  			<a href="#">
+			  				Work in House
+			  				<img src="{% static 'img/wh.png' %}" width="80">
+			  			</a>
+			  		</div>
+				</div>
+			</div>
+			<br>
+			Todos os Direitos Reservados - TecnON © 2017 - 2018
+		</footer>
+
+
+
+		<script type="text/javascript" src="{% static 'js/menuOverlay.js' %}"></script>
+	</body>
+</html>

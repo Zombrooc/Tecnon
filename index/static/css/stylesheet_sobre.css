@@ -1,0 +1,65 @@
+.corpo{
+    background: #fff;
+    font-size: 20px;
+    font-family: Raleway;
+    margin: 10px;
+    padding: 20px;
+}
+
+
+p.text{
+	font-family: Raleway;
+	font-size: 19px;
+	text-align: justify;
+	line-height: 1.5;
+	margin-top: 10px;
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 4;
+    top: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+
+.tooltip .tooltiptext img{
+	width: 100px;
+	border-radius: 4px;
+}
+
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: -25%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+    transform: rotate(180deg);
+}
+
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

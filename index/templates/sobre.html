@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <meta name="description" content="Entre em Contato Conosco">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_sobre.css'%}">
+    <title>Sobre Nós | Tecnon</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_sobre_mobile.css' %}" media="screen and (max-width: 1000px)">
+{% endblock %}
+{% block corpo %}
+    <div class="corpo">
+        <p style="font-size: 30px; margin-left: 30px;"> Sobre Nós </p>
+        <hr>
+        <p class="text">
+            A internet conecta uma quantidade gigantesca de pessoas ao resto do mundo, e a cada momento que passa acaba tornando as pessoas mais dependentes dela, existem pessoas que usam a internet para lazer, trabalho, ver notícias, mas também existem aqueles que a usam para o estudo.
+        </p>
+        <p class="text">
+            O uso da internet para estudo pode não soar bem para muitas pessoas, mas desde que seu uso seja consciente, ela acaba sendo uma grande aliada para completar o estudo do aluno.
+        </p>
+        <p class="text">
+            Não é de hoje que uma boa parte dos alunos - seja de escola pública, privada, Curso Técnico, etc. - não entendem a matéria que está sendo passada por completo, seja por receio ou vergonha de fazer uma pergunta ao professor sobre alguma dúvida que tenha surgido durante a explicação, por isso o site Tecnon, tem como principal objetivo suprir a necessidade do aluno de obter não só a matéria na qual ele tem dúvida, mas também todas as matérias lecionadas nos cursos técnicos da Escola Estadual Godofredo Rangel, sem que seja necessário ele perguntar para o professor ou até mesmo passar horas pesquisando o material desejado na internet.
+        </p>
+        <p class="text">
+            Além do acesso ao material didático, o site também irá oferecer ao aluno acesso a ferramentas que auxiliarão eles em certas matérias, possibilitando mais agilidade ao fazer seus deveres por exemplo.
+        </p>
+        <p class="text">
+            O site foi desenvolvido por Elian Valdez, Paola Martins, Saimon Lucas, como parte do Trabalho de Conclusão de Curso, orientado pela professora Moara Nascimento.
+        </p>
+        <div style="text-align: center;">
+            <img style="text-align: center;" src="{% static 'img/Equipe_de_Criacao.jpeg' %}" width="30%">
+            <p class="text" style="text-align: center; font-size: 25px;"> Equipe de Criação</p>    
+        </div>
+        
+        <!-- <p class="text">
+            O site foi desenvolvido por 
+            <span class="tooltip">
+                <span style="border-bottom: 1px solid black;">Elian Valdez</span>
+                <span class="tooltiptext">
+                    <img src="{% static 'img/Elian.jpg' %}">
+                    Tooltip text
+                </span>
+            </span>,
+            <span class="tooltip">
+                <span style="border-bottom: 1px solid black;">Paola Martins</span>
+                <span class="tooltiptext">
+                    Tooltip text
+                </span>
+            </span> e 
+            <span class="tooltip">
+                <span style="border-bottom: 1px solid black;">Saimon Lucas</span>
+                <span class="tooltiptext">
+                    Tooltip text
+                </span>
+            </span>, como parte do Trabalho de Conclusão de Curso, orientado pela professora
+            <span class="tooltip">
+                <span style="border-bottom: 1px solid black;">Moara Nascimento</span>
+                <span class="tooltiptext">
+                    Tooltip text
+                </span>
+            </span>. 
+        </p> -->
+
+    </div>
+{% endblock %}

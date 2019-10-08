@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block head%}
+		<meta name="description" content="Broken Link, O Site mais inutil do Mundo">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_gerador.css'%}">
+		<title>Tecnon | Gerador CPF</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet_gerador_mobile.css' %}" media="screen and (max-width: 1000px)">
+{% endblock%}
+{% block corpo %}
+	<!-- Inicio corpo -->
+	<div class="corpo">
+		<div class="texto">
+			<h1>Gerador de CPFs</h1>
+			<p>O uso dessa ferramenta é para programadores, a gerar CPF válidos. Normalmente necessários parar testar seus softwares em desenvolvimento.</p>
+			<p style="color: red;">A má utilização dos dados aqui gerados é de total responsabilidade do usuário.</p>
+			<p>Os números são gerados de forma aleatória, respeitando as regras de criação do documento.</p>
+		</div>
+		<div class="cpf">
+			<p style="">{{resultado}}</p>
+		</div>
+		<form method="POST">
+			{% csrf_token %}
+			<button class="gerar" type=submit> Gerar </button>
+
+		</form>
+	</div>
+
+	<!-- Fim corpo -->
+	
+
+{% endblock %}
